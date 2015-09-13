@@ -41,6 +41,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UILaunchImageFile</key>
+	<string>launchscreen.png</string>
+	<key>UILaunchImageFile~iphone</key>
+	<string>launchscreen.png</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
