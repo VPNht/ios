@@ -42,7 +42,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		
         let usernameLayer = username.layer
         let usernameBottomBorder = CALayer()
-        usernameBottomBorder.borderColor = UIColor.darkGrayColor().CGColor
+        usernameBottomBorder.borderColor = UIColor(red: 187/255, green: 187/255, blue: 187/255, alpha: 1).CGColor
         usernameBottomBorder.borderWidth = 1
         usernameBottomBorder.frame = CGRectMake(-1, usernameLayer.frame.size.height-1, usernameLayer.frame.size.width, 1)
         usernameLayer.addSublayer(usernameBottomBorder)
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		
         let passwordLayer = password.layer
         let passwordBottomBorder = CALayer()
-        passwordBottomBorder.borderColor = UIColor.darkGrayColor().CGColor
+        passwordBottomBorder.borderColor = UIColor(red: 187/255, green: 187/255, blue: 187/255, alpha: 1).CGColor
         passwordBottomBorder.borderWidth = 1
         passwordBottomBorder.frame = CGRectMake(-1, usernameLayer.frame.size.height-1, usernameLayer.frame.size.width, 1)
         passwordLayer.addSublayer(passwordBottomBorder)
@@ -125,7 +125,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func register(sender: UIButton) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"https://vpn.ht/signup")!)
+        let registerWebView = registerWebViewController()
+        registerWebView.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
+        let registerView = UINavigationController(rootViewController: registerWebView)
+        self.presentViewController(registerView, animated: true, completion: nil)
     }
     
     func checkLogin() {
@@ -297,3 +300,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	}
 }
 
+class registerWebViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        self.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
+        let doneButton = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.Plain, target: self, action: "hideRegisterWebView:")
+        doneButton.tintColor = StaticVar.lightBackgroundColor
+        self.navigationItem.setRightBarButtonItem(doneButton, animated: false)
+        self.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
+        self.view.backgroundColor = StaticVar.darkBackgroundColor
+        
+        let webView = SMWebView.loadURL(NSURL(string: "https://vpn.ht/buy-vpn?_ref=ios")!)
+        webView.frame   = UIScreen.mainScreen().bounds
+        self.view.addSubview(webView)
+    }
+    
+    func hideRegisterWebView(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+}

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D91603571B18FAE700D1A33D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D91603561B18FAE700D1A33D /* NetworkExtension.framework */; };
 		D95E83821B2F0205006A9681 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D95E83801B2F01B6006A9681 /* LaunchScreen.xib */; };
+		D9662B3B1BA61C1F001D0F14 /* SMWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9662B3A1BA61C1F001D0F14 /* SMWebView.swift */; };
 		D97C8AA61B6D7FB8001EF1C0 /* VpnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C8AA51B6D7FB8001EF1C0 /* VpnViewController.swift */; };
 		D97F11A31B08A40E003C6CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97F11A21B08A40E003C6CB8 /* AppDelegate.swift */; };
 		D97F11A51B08A40E003C6CB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97F11A41B08A40E003C6CB8 /* LoginViewController.swift */; };
@@ -42,6 +43,7 @@
 		D916035C1B19103300D1A33D /* VPN.HT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VPN.HT-Bridging-Header.h"; sourceTree = "<group>"; };
 		D948A8F81B0A7F7F00EF3DC2 /* VPN.HT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VPN.HT.entitlements; sourceTree = "<group>"; };
 		D95E83801B2F01B6006A9681 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		D9662B3A1BA61C1F001D0F14 /* SMWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMWebView.swift; sourceTree = "<group>"; };
 		D9775D4D1B4AF7690021BDCA /* DnsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DnsViewController.swift; sourceTree = "<group>"; };
 		D97C8AA51B6D7FB8001EF1C0 /* VpnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VpnViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		D97F119D1B08A40E003C6CB8 /* VPN.HT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPN.HT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 				D9BEF4371B7BC48500FC91CB /* Images.xcassets */,
 				D97F11C41B08BA3D003C6CB8 /* Classes.swift */,
 				D9E609351B22261F00FB21F3 /* KeychainAccess.m */,
+				D9662B3A1BA61C1F001D0F14 /* SMWebView.swift */,
 				D9E609371B22262E00FB21F3 /* KeychainAccess.h */,
 				D916035C1B19103300D1A33D /* VPN.HT-Bridging-Header.h */,
 				D9D8BFAF1B2B707B00F47BF3 /* Main.storyboard */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9662B3B1BA61C1F001D0F14 /* SMWebView.swift in Sources */,
 				D97F11A51B08A40E003C6CB8 /* LoginViewController.swift in Sources */,
 				D97F11C51B08BA3D003C6CB8 /* Classes.swift in Sources */,
 				D97F11A31B08A40E003C6CB8 /* AppDelegate.swift in Sources */,

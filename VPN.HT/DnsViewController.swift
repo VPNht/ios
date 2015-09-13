@@ -199,7 +199,7 @@ class SmartDnsTutorialViewController: UIViewController, UIPageViewControllerData
 	override func viewDidLoad() {
 		self.automaticallyAdjustsScrollViewInsets = false
 		self.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
-		let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Bordered, target: self, action: "hideTutorialView:")
+		let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "hideTutorialView:")
 		doneButton.tintColor = StaticVar.lightBackgroundColor
 		self.navigationItem.setRightBarButtonItem(doneButton, animated: false)
 		self.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
