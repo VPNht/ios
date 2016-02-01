@@ -207,11 +207,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = "Douwe Bos";
+				ORGANIZATIONNAME = "VPN.ht Limited";
 				TargetAttributes = {
 					D97F119C1B08A40E003C6CB8 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = CKZT75PN5T;
+						DevelopmentTeam = GQ86HD4E57;
 						SystemCapabilities = {
 							com.apple.VPNLite = {
 								enabled = 1;
@@ -403,7 +403,7 @@
 				INFOPLIST_FILE = VPN.HT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DJB.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = ht.vpn.anonymous;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VPN.HT/VPN.HT-Bridging-Header.h";
@@ -424,7 +424,7 @@
 				INFOPLIST_FILE = VPN.HT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.DJB.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = ht.vpn.anonymous;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "VPN.HT/VPN.HT-Bridging-Header.h";
