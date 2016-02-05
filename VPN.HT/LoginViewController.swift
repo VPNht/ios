@@ -16,8 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var username = UITextField()
     var password = UITextField()
     var login = UIButton()
-    var register = UIButton()
-    
+
     var backgroundBlurView = UIView()
     var loadingView = UIActivityIndicatorView()
     
@@ -68,14 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         login.addTarget(self, action: "login:", forControlEvents: UIControlEvents.TouchUpInside)
         login.tintColor = StaticVar.greenBackgroundColor
         login.backgroundColor = StaticVar.greenBackgroundColor
-        
-        register.frame = CGRectMake(25, self.login.frame.maxY + 20, self.view.frame.width - 50, 50)
-        register.setTitle("REGISTER", forState: UIControlState.Normal)
-        register.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 20)!
-        register.addTarget(self, action: "register:", forControlEvents: UIControlEvents.TouchUpInside)
-        register.tintColor = UIColor.lightGrayColor()
-        register.backgroundColor = UIColor.lightGrayColor()
-		
+
         backgroundBlurView.frame = login.frame
         backgroundBlurView.alpha = 0
 		backgroundBlurView.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 0.5)
@@ -86,14 +78,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loadingView.alpha = 0
         loadingView.startAnimating()
 		
-		let offset = (self.view.frame.height/2)-(self.register.frame.maxY/2)
-		loginView.frame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: self.register.frame.maxY)
+		let offset = (self.view.frame.height/2)-((self.login.frame.maxY + 20)/2)
+		loginView.frame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: self.login.frame.maxY + 20)
         
         self.loginView.addSubview(logo)
         self.loginView.addSubview(username)
         self.loginView.addSubview(password)
         self.loginView.addSubview(login)
-        self.loginView.addSubview(register)
         self.loginView.addSubview(backgroundBlurView)
         self.loginView.addSubview(loadingView)
         
@@ -122,13 +113,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         else {
             loginFailed()
         }
-    }
-    
-    func register(sender: UIButton) {
-        let registerWebView = registerWebViewController()
-        registerWebView.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
-        let registerView = UINavigationController(rootViewController: registerWebView)
-        self.presentViewController(registerView, animated: true, completion: nil)
     }
     
     func checkLogin() {
@@ -273,7 +257,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 		
 		UIView.animateWithDuration(0.1, animations: { () -> Void in
-			self.loginView.frame = CGRect(x: 0, y: keyboardFrame.minY - self.register.frame.maxY - 5, width: self.view.frame.width, height: self.register.frame.maxY)
+			self.loginView.frame = CGRect(x: 0, y: keyboardFrame.minY - (self.login.frame.maxY + 20) - 5, width: self.view.frame.width, height: self.login.frame.maxY + 20)
 		})
 	}
 	
@@ -281,8 +265,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		print("Hide Keyboard")
 		
 		UIView.animateWithDuration(0.1, animations: { () -> Void in
-			let offset = (self.view.frame.height/2)-(self.register.frame.maxY/2)
-			self.loginView.frame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: self.register.frame.maxY)
+			let offset = (self.view.frame.height/2)-((self.login.frame.maxY + 20)/2)
+			self.loginView.frame = CGRect(x: 0, y: offset, width: self.view.frame.width, height: (self.login.frame.maxY + 20))
 		})
 	}
 	
@@ -298,24 +282,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		}
 		return false
 	}
-}
-
-class registerWebViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        self.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
-        let doneButton = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.Plain, target: self, action: "hideRegisterWebView:")
-        doneButton.tintColor = StaticVar.lightBackgroundColor
-        self.navigationItem.setRightBarButtonItem(doneButton, animated: false)
-        self.navigationController?.navigationBar.barTintColor = StaticVar.darkBackgroundColor
-        self.view.backgroundColor = StaticVar.darkBackgroundColor
-        
-        let webView = SMWebView.loadURL(NSURL(string: "https://vpn.ht/buy-vpn?_ref=ios")!)
-        webView.frame   = UIScreen.mainScreen().bounds
-        self.view.addSubview(webView)
-    }
-    
-    func hideRegisterWebView(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
 }
